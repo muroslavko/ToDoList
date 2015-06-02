@@ -12,7 +12,10 @@
 @Html.DropDownList("Category", new SelectList(Model.AsEnumerable(), "Id", "Text"), new { id = "categoryState" }) 
 @Html.ActionLink("ManageCatagory", "Manage")
 <div id="listOfTaks">
+    @if (Model.Count() != 0)
+    {
     @Html.Action("_GetForCategory", "TaskPartial", new { id = Model.First<test1.Models.Category>().Id })
+    }
 </div>
 @section scripts{
     <script type="text/javascript">
