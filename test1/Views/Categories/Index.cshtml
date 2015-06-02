@@ -1,0 +1,37 @@
+﻿@model IEnumerable<test1.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 >Index</h2>
+<p>
+    
+</p>
+<h3>Select category</h3>
+@Html.DropDownList("Category", new SelectList(Model.AsEnumerable(), "Id", "Text"), new { id = "categoryState" }) 
+@Html.ActionLink("ManageCatagory", "Manage")
+<div id="listOfTaks">
+    @Html.Action("_GetForCategory", "TaskPartial", new { id = Model.First<test1.Models.Category>().Id })
+</div>
+@section scripts{
+    <script type="text/javascript">
+    $(function () {
+
+        $('#categoryState').change(function ()
+        {
+            // получаем выбранный id
+            var id = $(this).val();
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("_GetForCategory", "TaskPartial")/' + id,
+                success: function (data) {
+
+                    // заменяем содержимое присланным частичным представлением
+                    $('#listOfTaks').replaceWith(data);
+                }
+            });
+        });
+    })
+    </script>
+}

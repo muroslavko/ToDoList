@@ -1,0 +1,12 @@
+﻿@model test1.Models.Subtask
+
+@Html.HiddenFor(x => x.TaskId)
+
+
+<div>
+    @Html.LabelFor(x => x.Text, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.EditorFor(x => x.Text, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<input type="submit" value="Add Subtask" class="btn btn-default" />
+
+

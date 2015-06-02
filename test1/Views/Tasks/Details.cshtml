@@ -1,0 +1,47 @@
+﻿@model test1.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Task: @Html.DisplayFor(model => model.Text)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complete)
+        </dd>
+        @Html.ActionLink("Edit", "Edit", "Tasks", new { id = Model.Id }, new { }) | 
+        @Html.ActionLink("Delete", "Delete", "Tasks", new { id = Model.Id }, new { })
+    </dl>
+</div>
+
+<p>
+@Html.Action("_GetSubtaskFor", "Subtasks", new { id = Model.Id })
+</p>
+
+<p>
+    @Html.ActionLink("Back to List", "Index", "Categories")
+</p>
