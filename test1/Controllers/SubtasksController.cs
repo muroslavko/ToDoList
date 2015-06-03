@@ -38,9 +38,6 @@ namespace test1.Controllers
         }
         public ActionResult ChangeStateOfSubtask(IEnumerable<test1.Models.Subtask> subtask)
         {
-            //перевірка чи не порожня
-            //важливо
-            //TODO: gthtdshbn
             var t = new Subtask();
             bool stateOfTask = false;
             foreach (var item in subtask)

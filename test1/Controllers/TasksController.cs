@@ -14,13 +14,6 @@ namespace test1.Controllers
     {
         private ToDoContext db = new ToDoContext();
 
-        // GET: Tasks
-        public ActionResult Index()
-        {
-            var tasks = db.Tasks.Include(t => t.Category);
-            return View(tasks.ToList());
-        }
-
         // GET: Tasks/Details/5
         public ActionResult Details(int? id)
         {
