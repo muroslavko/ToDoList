@@ -142,11 +142,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\ICRUDOperations.cs" />
     <Compile Include="Models\Subtask.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Controllers\TaskPartialController.cs" />
     <Compile Include="Models\ToDoContext.cs" />
+    <Compile Include="Models\ToDoListContextInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

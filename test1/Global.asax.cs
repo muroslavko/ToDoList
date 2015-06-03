@@ -16,7 +16,7 @@ namespace test1
         {
             AreaRegistration.RegisterAllAreas();
 
-            //Database.SetInitializer<ToDoContext>(new DropCreateDatabaseAlways<ToDoContext>());
+            //Database.SetInitializer<ToDoContext>(new DropCreateDatabaseAlways<DbContext>());
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
